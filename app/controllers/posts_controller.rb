@@ -1,38 +1,37 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:edit, :update, :destroy]
+
   def create
-    @content = params[:content]
+    cont = params[:content]
+
     p = post_params
     user = User.find(p[:id])
-
-    if (p[:body] == "")
+    if (p[:body].empty?)
       flash[:alert] = "空白のままコメントすることはできません"
-      render "movies/show"
+      redirect_to request.referer
     else
       if user.posts.create(
         body: p[:body],submitter: current_user.id,review: p[:review],
         image: p[:image], poster_path: p[:poster_path])
         flash[:notice] = "コメントが投稿されました。"
+        redirect_to request.referer
       else
         flash[:alert] = "コメントの投稿に失敗しました。"
+        redirect_to request.referer
       end
-      redirect_to user_path(current_user.id)
     end
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to root_path
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy!
     redirect_to root_path
   end
@@ -41,5 +40,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:body, :id, :review, :image, :poster_path)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

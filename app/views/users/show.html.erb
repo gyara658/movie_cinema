@@ -1,4 +1,26 @@
-<h1>マイページ:<%= @user.username %></h1>
+<% provide(:title, @user.username) %>
+<div class="user-page">
+  <h1>
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar.variant(resize_to_fill: [200, 250]) %>
+    <% else %>
+      <%= gravatar_for @user %>
+    <% end %>
+    <%= @user.username %>
+  </h1>
+
+
+
+  <div class="">
+    <strong>プロフィール:</strong><br />
+    <%= @user.profile %>
+  </div>
+
+  <%= link_to edit_user_registration_path do %>
+    <i class="fas fa-pen">ユーザー情報編集</i>
+  <% end %>
+  <%= link_to "戻る", :back %>
+</div>
 
 <% if @users != nil  %>
   <ul>

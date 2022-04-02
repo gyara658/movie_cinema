@@ -1,10 +1,11 @@
-<% image = "https://image.tmdb.org/t/p/w300/#{@content["poster_path"]}" %>
-<% title = @content["title"]  %>
-<% release_date = @content["release_date"] %>
-<% overview = @content["overview"] %>
-<% vote_average = @content["vote_average"] %>
-<% vote_count = @content["vote_count"] %>
-<% poster_path = @content["poster_path"] %>
+<% type = @content ? type = @content : type = cont  %>
+<% image = "https://image.tmdb.org/t/p/w300/#{type["poster_path"]}" %>
+<% title = type["title"]  %>
+<% release_date = type["release_date"] %>
+<% overview = type["overview"] %>
+<% vote_average = type["vote_average"] %>
+<% vote_count = type["vote_count"] %>
+<% poster_path = type["poster_path"] %>
 <% content = {"image": image,"title":title,"release_date": release_date,
                 "overview": overview,"vote_average":vote_average,
                 "vote_count":vote_count, "poster_path": poster_path } %>
@@ -30,13 +31,12 @@
       <tr class="tr-title">
         <th scope="row" class="th">評価</th>
         <td><%= vote_average %></td>
-      <!-- <tr class="tr-title">
-        <th scope="row" class="th">評価数</th>
-        <td><%= vote_count %></td>
-      </tr> -->
+      </tr>
     </tbody>
   </table>
+  <%= link_to "戻る", :back %>
 </div>
+
 
 
 <% if user_signed_in? %>
@@ -50,6 +50,7 @@
       <%= f.submit "送信" %>
     <% end %>
   </div>
+
 
   <div class="coment-area">
   <% if @posts != nil %>
