@@ -44,6 +44,7 @@ class MoviesController < ApplicationController
     @users = User.pluck(:id, :username)
     @poster_path = Post.pluck(:poster_path)
     @posts = Post.pluck(:user_id, :review, :image, :body, :submitter, :id, :created_at, :poster_path)
+    session[:content] = @content
   end
 
   private
