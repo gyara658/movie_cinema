@@ -14,7 +14,7 @@
         <% type = @base_content %>
         <%= image_tag "https://image.tmdb.org/t/p/w300/#{type[0]["poster_path"]}", class:"card-img-top" %>
           <div class="card-body">
-            <p><%= type[0][@name] %></p>
+            <h4><%= type[0]["title"] %></h4>
             <p class="card-text"><%= type[0]["overview"].truncate(20) %></p>
           </div>
           <% content_arr.push(type[i]) %>

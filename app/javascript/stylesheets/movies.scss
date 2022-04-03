@@ -1,10 +1,116 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.content-box{
-  display:flex;
-  margin: 0 10px;
+
+@media screen and (min-width:1024px) {
+  .content-box{
+    display:flex;
+    margin-right: 10px;
+    margin-left:  10px;
+  }
+  .coment-area h4 {
+    margin-left: 10px;
+    max-width: 530px;
+  }
+
+  .index-card{
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .card-main{
+    margin: 0 5px;
+  }
 }
+
+
+/* タブレット */
+@media only screen and (min-width:640px) and (max-width:1023px) {
+  .content-box{
+    margin-bottom:  10px;
+    margin-right:  5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card-main{
+    flex-basis: 40%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right:  5px;
+  }
+
+  .btn{
+    margin-bottom: 4px;
+  }
+
+  .index-card{
+    flex-basis: 40%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+/* スマホ */
+@media screen and (max-width:639px) {
+  .content-box{
+    margin-bottom: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+  .card-main{
+    flex-basis: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .card-text{
+    display: none;
+  }
+  .coment-area h4 {
+    margin-left: 10px;
+    max-width: 530px;
+    font-size: 10px;
+  }
+
+  .index-card{
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .card-body{
+    padding: 4px 4px;
+  }
+
+  .btn{
+    margin-bottom: 4px;
+  }
+}
+
+
+// .content-box{
+//   display:flex;
+//   margin: 0 10px;
+// }
 
 .top-link {
   text-align: left;
@@ -15,13 +121,13 @@
   display:flex;
 }
 
-.index-card{
-  flex-basis: 30%;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin: 10px;
-}
+// .index-card{
+//   flex-basis: 30%;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px;
+//   margin: 10px;
+// }
 
 .main{
  display: flex;
@@ -40,13 +146,7 @@
   padding: 20px;
 }
 
-.card-main{
-  margin: 0 5px;
-}
-.card-img-top{
-  max-width: 300px;
-  max-height: 350px;
-}
+
 
 .show-img{
   max-width: 350px;
@@ -95,9 +195,13 @@
 
 .coment-area table {
   margin-bottom: 10px;
-
 }
 
 .coment-area p {
   border-bottom: dashed;
+}
+
+.card-img-top{
+  max-width: 300px;
+  max-height: 350px;
 }
