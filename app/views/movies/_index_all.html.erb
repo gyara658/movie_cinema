@@ -6,7 +6,7 @@
 <% content_arr = [] %>
 <div class="main">
   <% i = 0 %>
-  <% if  @count > 0 %>
+  <% if  !@count.zero? %>
     <% while i < @count %>
       <div class="card index-card" style="width: 18rem;">
         <% trend = @trend_list[i]  %>

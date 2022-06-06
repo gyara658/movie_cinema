@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'posts/create'
-  # get 'users/show'
-  get "home/index", to: "home#index"
   devise_for :users ,controllers: {
     sessions: "users/sessions",
     passwords: "users/passwords",
