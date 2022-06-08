@@ -5,10 +5,8 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
     get movies_search_url
     assert_response :success
   end
-
   test "should get show" do
     get movies_show_url
     assert_response :success
   end
-
 end
