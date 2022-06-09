@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe "Users", type: :request do
   before do
     @user = FactoryBot.create(:user, :a)
@@ -27,7 +26,6 @@ RSpec.describe "Users", type: :request do
     it 'sign_up画面' do
       get "/users/sign_up"
       expect(response).to have_http_status("200")
-#      puts response.body
     end
   end
 
@@ -35,7 +33,7 @@ RSpec.describe "Users", type: :request do
     before do
       sign_in @user
     end
-  # 200レスポンスが返ってきているか？
+    # 200レスポンスが返ってきているか？
     it "編集画面" do
       get "/users/edit"
       expect(response).to have_http_status("200")
@@ -43,11 +41,11 @@ RSpec.describe "Users", type: :request do
   end
 
   describe '非ログイン' do
-   context "本人ではない場合" do
-     it 'ルートパスにリダイレクト' do
-       get root_path
-       expect(response).to have_http_status("200")
-     end
-   end
- end
+    context "本人ではない場合" do
+      it 'ルートパスにリダイレクト' do
+        get root_path
+        expect(response).to have_http_status("200")
+      end
+    end
+  end
 end

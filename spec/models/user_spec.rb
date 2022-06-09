@@ -20,12 +20,12 @@ RSpec.describe User, type: :model do
       User.create(
         username: "username1",
         email: "user1@user.com",
-        password: "user1pass",
+        password: "user1pass"
       )
       user = User.new(
         username: "username2",
         email: "user1@user.com",
-        password: "user2pass",
+        password: "user2pass"
       )
       user.valid?
       expect(user.errors[:email]).to include("はすでに存在します")
@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
     end
 
     it "password_confirmationとpasswordが異なる場合保存できない" do
-      expect(FactoryBot.build(:user,password:"password",password_confirmation: "passward")).to_not be_valid
+      expect(FactoryBot.build(:user, password: "password", password_confirmation: "passward")).to_not be_valid
     end
   end
 end

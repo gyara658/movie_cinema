@@ -19,9 +19,9 @@ module MoviesHelper
   end
 
   def bubble_sort(ary)
-  length = ary.length
-    (1..length).each do  |i|
-      (1..(length-i)).each  do |jx|
+    length = ary.length
+    (1..length).each do |i|
+      (1..(length - i)).each do |jx|
         jy = jx - 1
         if ary[jy][6].to_s < ary[jx][6].to_s
           tmp = ary[jy]
@@ -32,5 +32,4 @@ module MoviesHelper
     end
     ary
   end
-
 end

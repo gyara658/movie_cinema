@@ -2,7 +2,7 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
-require'devise'
+require 'devise'
 # requireFile.expand_path("spec/support/controller_macros.rb")
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
@@ -70,5 +70,4 @@ RSpec.configure do |config|
   config.extend ControllerMacros, :type => :controller
   config.include FactoryBot::Syntax::Methods
   config.render_views
-
 end
