@@ -1,23 +1,31 @@
 <% provide(:title, @user.username) %>
 <div class="user-page">
-  <h1>
-    <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar.variant(resize_to_fill: [200, 250]) %>
+  <div class="user-info">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url(:thumb), class: "rounded-circle" %>
     <% else %>
       <%= gravatar_for @user %>
     <% end %>
+    <br />
+    <strong>ユーザーネーム:</strong>
     <%= @user.username %>
-  </h1>
-
-  <div class="">
-    <strong>プロフィール:</strong><br />
-    <%= @user.profile %>
   </div>
 
-  <%= link_to edit_user_registration_path do %>
-    <i class="fas fa-pen">ユーザー情報編集</i>
-  <% end %>
-  <%= link_to "戻る", :back %>
+  <div class="user-prof">
+    <strong>プロフィール:</strong><br />
+    <% if @user.profile? %>
+      <%= @user.profile %>
+    <% else %>
+      <p>よろしくお願いします！！！</p>
+    <% end %>
+  </div>
+
+  <div class="user-info">
+    <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-pen">ユーザー情報編集</i>
+    <% end %>
+    <%= link_to "戻る", :back %>
+  </div>
 </div>
 
 <% if @users != nil  %>

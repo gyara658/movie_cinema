@@ -65,13 +65,12 @@ class MoviesController < ApplicationController
       end
       # 例外処理
       begin
-
         # @movies = JSON.parse(json)
         @movies_content = @movies["results"].sort_by { |hash| -hash['popularity'].to_i }
         @count = @movies_content.size
         # エラー処理
       rescue => e
-        @message = "e.message"
+        @message = e.message
       end
 
       # json = Net::HTTP.get(uri)
