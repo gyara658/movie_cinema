@@ -7,6 +7,7 @@
     感想を共有することができます。
 
 #2, 操作画面GIF
+    <br />
     ![Movie_cinema_01](https://user-images.githubusercontent.com/49307752/172847704-ed560e66-ea2a-4915-b6a6-d5c08d6045d3.gif)
     <br />
     ![Movie_cinema_02](https://user-images.githubusercontent.com/49307752/172848679-c93b0732-adde-44f8-90aa-0c1322e13575.gif)
