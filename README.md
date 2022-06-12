@@ -6,14 +6,21 @@
     おすすめの映画や好きな映画のを検索したり、
     感想を共有することができます。
 
-#2, 使用技術
+#2, 操作画面GIF
+    <br />
+    ![Movie_cinema_05](https://user-images.githubusercontent.com/49307752/172855084-e767801f-064b-4d2b-b56a-40eb95976014.gif)
+
+    <br />
+    ![Movie_cinema_04](https://user-images.githubusercontent.com/49307752/172855213-62246e6c-3cbf-4cd1-b438-4efa88113901.gif)
+
+#3, 使用技術
   * Ruby 2.7.3
   * Ruby on Rails 6.0.3
   * webpacker(bootstrap/fontawesomes/css/css/js/jQuery)
   * RSpec
   * TMDB API
-  
-#3, 機能、非機能一覧
+
+#4, 機能、非機能一覧
   * ユーザー登録,ログイン機能(devise)
   * 画像投稿(carrierwave/MiniMagick)
   * 投稿、編集、削除、新規作成
