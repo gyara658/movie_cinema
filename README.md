@@ -10,8 +10,6 @@
     <br />
     ![Movie_cinema_05](https://user-images.githubusercontent.com/49307752/172855084-e767801f-064b-4d2b-b56a-40eb95976014.gif)
 
-    <br />
-    ![Movie_cinema_04](https://user-images.githubusercontent.com/49307752/173232821-28152499-7e8d-453e-ab72-a2aff0b7fce3.gif)
 
 #3, 使用技術
   * Ruby 2.7.3
